@@ -1,4 +1,7 @@
-# Builds the site and publishes dist/ to the gh-pages branch (served by GitHub Pages).
+# Builds the site and publishes it to GitHub Pages.
+# Works with either Pages source setting (Settings → Pages → Build and deployment):
+#   • "GitHub Actions"          → served by the `pages` job (deploy-pages)
+#   • "Deploy from a branch"    → served from the gh-pages branch (pushed by `build`)
 name: Deploy to GitHub Pages
 
 on:
@@ -8,13 +11,15 @@ on:
 
 permissions:
   contents: write
+  pages: write
+  id-token: write
 
 concurrency:
   group: pages
   cancel-in-progress: true
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -24,7 +29,10 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run build
-      - name: Publish dist/ to gh-pages
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+      - name: Publish dist/ to gh-pages branch
         run: |
           cd dist
           git init -q -b gh-pages
@@ -33,3 +41,15 @@ jobs:
           git add -A
           git commit -q -m "Deploy ${GITHUB_SHA::7}"
           git push -f "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${GITHUB_REPOSITORY}.git" gh-pages
+
+  pages:
+    needs: build
+    runs-on: ubuntu-latest
+    # Only succeeds when the Pages source is "GitHub Actions"; harmless otherwise.
+    continue-on-error: true
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
