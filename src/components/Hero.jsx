@@ -62,8 +62,8 @@ export default function Hero() {
               Explore the Menu
               <ArrowRight width={18} height={18} className="transition-transform duration-300 group-hover:translate-x-1" />
             </a>
-            <a href={site.maps.directionsUrl} target="_blank" rel="noopener noreferrer" className="btn btn-ghost-light">
-              <PinIcon width={18} height={18} /> Get Directions
+            <a href="#visit" className="btn btn-ghost-light">
+              <PinIcon width={18} height={18} /> Find Us on the Map
             </a>
           </div>
         </div>

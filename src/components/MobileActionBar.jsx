@@ -13,8 +13,8 @@ export default function MobileActionBar() {
         <a href="#menu" className={item}>
           <BookIcon /> Menu
         </a>
-        <a href={site.maps.directionsUrl} target="_blank" rel="noopener noreferrer" className={item}>
-          <PinIcon /> Directions
+        <a href="#visit" className={item}>
+          <PinIcon /> Map
         </a>
         {has.phone() && (
           <a href={telHref()} className={item}>

@@ -73,27 +73,24 @@ export default function Visit() {
               </div>
             </div>
           </div>
-          <div className="reveal mt-8 flex flex-wrap gap-3">
-            <a href={site.maps.directionsUrl} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
-              <PinIcon width={18} height={18} /> Get Directions
-            </a>
-            <a href={site.maps.url} target="_blank" rel="noopener noreferrer" className="btn btn-ghost-dark">
-              View on Google Maps <ArrowRight width={18} height={18} />
-            </a>
-          </div>
         </div>
 
         <div className="reveal lg:col-span-7" style={{ '--reveal-delay': '120ms' }}>
           {has.embed() ? (
-            <div className="relative h-full min-h-[22rem] overflow-hidden rounded-t-[12rem] border border-forest/15 sm:min-h-[28rem]">
-              <iframe
-                src={site.maps.embedUrl}
-                title={`Map showing the location of ${site.name}`}
-                className="absolute inset-0 h-full w-full border-0"
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                allowFullScreen
-              />
+            <div className="flex h-full flex-col">
+              <div className="relative min-h-[22rem] flex-1 overflow-hidden rounded-[28px] border border-forest/15 bg-ivory-deep shadow-[0_30px_60px_-35px_rgba(24,57,46,0.55)] sm:min-h-[30rem]">
+                <iframe
+                  src={site.maps.embedUrl}
+                  title={`Map showing the location of ${site.name}`}
+                  className="absolute inset-0 h-full w-full border-0"
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  allowFullScreen
+                />
+              </div>
+              <a href={site.maps.url} target="_blank" rel="noopener noreferrer" className="mt-4 inline-flex items-center gap-2 self-start text-sm font-semibold text-forest underline-offset-4 hover:text-chilli hover:underline">
+                Open in Google Maps <ArrowRight width={16} height={16} />
+              </a>
             </div>
           ) : (
             <a

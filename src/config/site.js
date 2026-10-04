@@ -87,10 +87,12 @@ export const site = {
       'https://www.google.com/maps/dir/?api=1&destination=Khao+Moo+The+Ethnic+Food+Hub&destination_place_id=ChIJV9X1YyY3RzcRUGWWlOavKrA',
     placeId: 'ChIJV9X1YyY3RzcRUGWWlOavKrA',
     /**
-     * Google Maps <iframe> src (Share → Embed a map → copy the src="…" value).
-     * Only add once you have checked it shows the correct restaurant pin.
+     * Google Maps <iframe> src shown in "Visit Us". Searches for the listing by
+     * name + town (no API key needed). For an exact pin, replace with the value
+     * from Google Maps → Share → Embed a map → src="…". Set null to hide the map.
      */
-    embedUrl: null,
+    embedUrl:
+      'https://maps.google.com/maps?q=Khao%20Moo%20The%20Ethnic%20Food%20Hub%2C%20Sivasagar%2C%20Assam&z=15&output=embed',
   },
 
   social: {

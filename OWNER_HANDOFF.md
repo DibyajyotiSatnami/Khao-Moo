@@ -25,9 +25,10 @@ Everything the site shows came from the owner-supplied photos and menu card, the
 - [ ] **Menu descriptions**: pickles currently say "Fresh, authentic and homemade." Send a line per item if you'd like something more specific.
 - [ ] **Dietary labels**: only *Veg* (two veg pickles, as on the menu card) and *Non-veg* (chicken/pork items) are shown. Confirm whether Chilli-Garlic Oil should carry a Veg label.
 
+- [ ] **Map in Visit Us**: it searches Google Maps for "Khao Moo The Ethnic Food Hub, Sivasagar, Assam". Check that it lands on the right pin. For an exact pin, open your listing → Share → Embed a map, and paste the `src` value into `site.maps.embedUrl`.
+
 ## ❌ Missing (hidden on the site until supplied)
 - [ ] **Opening hours** (`site.hours` and `site.schemaHours`)
-- [ ] **Google Maps embed URL**, checked against the correct pin (`site.maps.embedUrl`)
 - [ ] **Website domain** for canonical and social links (`site.siteUrl`)
 - [ ] **Reservations**: do you accept table reservation requests on WhatsApp? If yes, set `features.reservations.enabled: true` (the form is built and tested).
 - [ ] **Reviews**: only real reviews, with author and source (`features.reviews`). Until then the site shows a "Find Us on Google Maps" link.
