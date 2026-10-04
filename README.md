@@ -11,7 +11,9 @@ npm run build     # production build → dist/
 npm run preview   # serve the production build
 ```
 
-`dist/` is a static site, so it can go on Netlify, Vercel, Cloudflare Pages, GitHub Pages or any static host.
+**Live site:** https://dibyajyotisatnami.github.io/Khao-Moo/
+
+Every push to `main` or `claude/friendly-pasteur-ebyk4i` rebuilds the site and publishes it to the `gh-pages` branch (`.github/workflows/deploy.yml`), which GitHub Pages serves. Asset paths are relative (`base: './'`), so `dist/` also works on Netlify, Vercel, Cloudflare Pages or any other static host. If you move to a custom domain, update `siteUrl` in `src/config/site.js`.
 
 ## Where to edit things
 

@@ -19,8 +19,8 @@
 /** Builds an image entry from the optimised files in /public/images. */
 function img(name, w, h, alt, caption) {
   return {
-    src: `/images/${name}-1290.webp`,
-    srcSet: `/images/${name}-640.webp 640w, /images/${name}-1290.webp 1290w`,
+    src: `images/${name}-1290.webp`,
+    srcSet: `images/${name}-640.webp 640w, images/${name}-1290.webp 1290w`,
     alt,
     w,
     h,
@@ -37,13 +37,13 @@ export const site = {
     'Khao Moo — The Ethnic Food Hub. Explore our menu, discover your next favourite, and plan your visit.',
 
   /** Public site URL, e.g. 'https://khaomoo.in' — used for canonical / social tags. */
-  siteUrl: null,
+  siteUrl: 'https://dibyajyotisatnami.github.io/Khao-Moo/',
 
   /** Year shown on the logo seal (verified: "Estd. 2023"). */
   established: 2023,
 
   /**
-   * Optional raster/vector logo file in /public (e.g. '/images/logo.svg').
+   * Optional raster/vector logo file in /public (e.g. 'images/logo.svg' — no leading slash).
    * `null` = use the built-in SVG redraw of the Khao Moo seal (components/Seal.jsx).
    */
   logo: null,
@@ -133,7 +133,7 @@ export const site = {
      * Official menu file in /public (PDF or image). null hides "Download Menu".
      * Currently the owner-supplied menu card image.
      */
-    menuFile: { href: '/khao-moo-menu.jpg', label: 'Download Menu', format: 'JPG' },
+    menuFile: { href: 'khao-moo-menu.jpg', label: 'Download Menu', format: 'JPG' },
 
     /**
      * Authentic reviews only. Each: { quote, author, source, sourceUrl, date }.
@@ -176,20 +176,20 @@ export const site = {
   /**
    * Every image slot on the site. `src: null` renders a styled, clearly
    * labelled placeholder with fixed proportions. To use a real photo, drop it
-   * into /public/images and set `src: '/images/your-file.jpg'`.
+   * into /public/images and set `src: 'images/your-file.jpg'` (no leading slash).
    * Keep the `alt` text accurate to the actual photo.
    */
   images: {
     hero: {
-      src: '/images/table-spread-1290.webp',
-      srcSet: '/images/table-spread-640.webp 640w, /images/table-spread-1290.webp 1290w',
+      src: 'images/table-spread-1290.webp',
+      srcSet: 'images/table-spread-640.webp 640w, images/table-spread-1290.webp 1290w',
       alt: 'Overhead view of a table laid with Khao Moo dishes in leaf-lined bowls',
       w: 1290,
       h: 1591,
     },
     story: {
-      src: '/images/pork-pickle-pouches-1290.webp',
-      srcSet: '/images/pork-pickle-pouches-640.webp 640w, /images/pork-pickle-pouches-1290.webp 1290w',
+      src: 'images/pork-pickle-pouches-1290.webp',
+      srcSet: 'images/pork-pickle-pouches-640.webp 640w, images/pork-pickle-pouches-1290.webp 1290w',
       alt: 'Two pouches of Khao Moo pork pickle, one with the red Khao Moo label',
       w: 1290,
       h: 1381,
@@ -215,7 +215,7 @@ export const site = {
     /** Full menu card (owner-supplied). */
     menuCard: img('menu-card', 1290, 1277, 'Khao Moo menu card listing pickles, chilli-garlic oil, ordering and delivery charges'),
     /** 1200×630 social sharing image in /public. */
-    ogImage: '/og-image.jpg',
+    ogImage: 'og-image.jpg',
   },
 
   nav: [

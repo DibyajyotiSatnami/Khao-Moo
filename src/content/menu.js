@@ -27,8 +27,8 @@
  */
 
 const photo = (name, w, h, alt) => ({
-  src: `/images/${name}-1290.webp`,
-  srcSet: `/images/${name}-640.webp 640w, /images/${name}-1290.webp 1290w`,
+  src: `images/${name}-1290.webp`,
+  srcSet: `images/${name}-640.webp 640w, images/${name}-1290.webp 1290w`,
   alt,
   w,
   h,

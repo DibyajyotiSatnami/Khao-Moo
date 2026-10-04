@@ -68,5 +68,7 @@ const seoPlugin = () => ({
 })
 
 export default defineConfig({
+  // Relative asset URLs so the build works on GitHub Pages (/Khao-Moo/) or any host/subfolder
+  base: './',
   plugins: [react(), tailwindcss(), seoPlugin()],
 })
